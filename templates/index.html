@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🎬 Cinephile Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>🎥 Movie Recommender for Cinephiles</h1>
+
+    <form method="POST">
+        <input type="text" name="movie" placeholder="Enter your favorite movie..." required>
+        <input type="submit" value="Recommend">
+    </form>
+
+    {% if recommended %}
+        <h3>Top 5 Recommendations</h3>
+        <div class="recommendation-grid">
+            {% for rec in recommended %}
+            <div class="movie-card">
+                {% if rec.poster %}
+                    <img src="{{ rec.poster }}" alt="{{ rec.title }}">
+                {% else %}
+                    <img src="{{ url_for('static', filename='default.jpg') }}" alt="No poster available">
+                {% endif %}
+                <p>{{ rec.title }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <footer>
+        Built with ❤️ for film lovers | Inspired by Netflix, Prime, IMDb & Letterboxd
+    </footer>
+</body>
+</html>
