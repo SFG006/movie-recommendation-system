@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from content_filter import recommend
+from content_filter import recommend, fetch_poster
 import pickle
 
 app = Flask(__name__)
@@ -11,6 +11,7 @@ def index():
     recommended = []
     if request.method == 'POST':
         movie = request.form['movie']
+        poster_url = fetch_poster(movie)
         recommended = recommend(movie)
     return render_template('index.html', movies=movies['title'].head(100).values, recommended=recommended)
 

@@ -20,16 +20,19 @@
         <div class="recommendation-grid">
             {% for rec in recommended %}
             <div class="movie-card">
-                {% if rec.poster %}
-                    <img src="{{ rec.poster }}" alt="{{ rec.title }}">
+                {% if rec.poster and rec.imdb %}
+                    <a href="{{ rec.imdb }}" target="_blank">
+                        <img src="{{ rec.poster }}" alt="{{ rec.title }}">
+                    </a>
                 {% else %}
-                    <img src="{{ url_for('static', filename='default.jpg') }}" alt="No poster available">
+                    <img src="{{ rec.poster }}" alt="{{ rec.title }}">
                 {% endif %}
                 <p>{{ rec.title }}</p>
             </div>
             {% endfor %}
         </div>
     {% endif %}
+
 
     <footer>
         Built with ❤️ for film lovers | Inspired by Netflix, Prime, IMDb & Letterboxd
