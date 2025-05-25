@@ -1,4 +1,5 @@
 import pickle
+import random
 import requests
 import urllib.parse
 from sklearn.metrics.pairwise import cosine_similarity
@@ -58,3 +59,7 @@ def recommend(movie_title):
         })
 
     return recommendations
+
+
+def search_by_genre(genre):
+    return moviess[moviess['genre'].str.contains(genre, case=False)]['title'].tolist()

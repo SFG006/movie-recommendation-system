@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>🎬 Cinephile Recommender</title>
+    <title>🎬 ILLUSTRIOUS FILMS </title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1>🎥 Movie Recommender for Cinephiles</h1>
-
+    <h1 class="logo-title"> ILLUSTRIOUS FILMS </h1>
+    <h2 class="tagline" style="color: white;">Curated Cinema Picks for True Film Lovers</h2>
     <form method="POST">
         <input type="text" name="movie" placeholder="Enter your favorite movie..." required>
         <input type="submit" value="Recommend">
@@ -33,9 +33,13 @@
         </div>
     {% endif %}
 
-
     <footer>
-        Built with ❤️ for film lovers | Inspired by Netflix, Prime, IMDb & Letterboxd
+        Built with ❤️ for film lovers |Follow us on
+        <div>
+        <a href="https://www.instagram.com/illustrious_films/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width:32px;">
+        </a>
+        </div>
     </footer>
 </body>
 </html>
