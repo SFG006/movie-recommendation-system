@@ -1,25 +1,38 @@
+<!--
+  Main HTML template for the movie recommendation web app.
+  - Handles displaying the form, recommendations, and page structure.
+  - Uses Flask's Jinja templating for dynamic content rendering.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>🎬 ILLUSTRIOUS FILMS </title>
+    <!-- Link to external CSS stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Google Fonts for styling -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <!-- App title and tagline -->
     <h1 class="logo-title"> ILLUSTRIOUS FILMS </h1>
     <h2 class="tagline" style="color: white;">Curated Cinema Picks for True Film Lovers</h2>
+
+    <!-- Movie input form -->
     <form method="POST">
         <input type="text" name="movie" placeholder="Enter your favorite movie..." required>
         <input type="submit" value="Recommend">
     </form>
 
+    <!-- Display recommendations if available -->
     {% if recommended %}
         <h3>Top 5 Recommendations</h3>
         <div class="recommendation-grid">
             {% for rec in recommended %}
             <div class="movie-card">
+                <!-- If both poster and IMDB link exist, make poster clickable -->
                 {% if rec.poster and rec.imdb %}
                     <a href="{{ rec.imdb }}" target="_blank">
                         <img src="{{ rec.poster }}" alt="{{ rec.title }}">
@@ -33,8 +46,9 @@
         </div>
     {% endif %}
 
+    <!-- Footer with Instagram link -->
     <footer>
-        Built with ❤️ for film lovers |Follow us on
+        Built with ❤️ for film lovers | Follow us on
         <div>
         <a href="https://www.instagram.com/illustrious_films/" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width:32px;">

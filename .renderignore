@@ -1,0 +1,11 @@
+# Ignore notebooks
+*.ipynb
+
+
+# Ignore large datasets
+*.csv
+data/
+
+# Ignore model training scripts
+save_model.py
+*.pkl
