@@ -1,0 +1,125 @@
+Index: content_filter.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import pickle\r\nimport random\r\nimport requests\r\nimport urllib.parse\r\nfrom sklearn.metrics.pairwise import cosine_similarity\r\nfrom flask import url_for\r\n\r\nAPI_KEY = '1785d39c9dc62729cb9c119ae7957953'\r\n\r\nmoviess = pickle.load(open('models/movies.pkl', 'rb'))\r\nvectors = pickle.load(open('models/vectors.pkl', 'rb'))\r\n\r\ndef fetch_poster(title):\r\n    try:\r\n        encoded_title = urllib.parse.quote(title)\r\n        search_url = f\"https://api.themoviedb.org/3/search/movie?api_key={API_KEY}&query={encoded_title}\"\r\n        search_response = requests.get(search_url, timeout=5)\r\n        search_data = search_response.json()\r\n\r\n        if search_data.get('results'):\r\n            movie_id = search_data['results'][0]['id']\r\n            poster_path = search_data['results'][0].get('poster_path')\r\n\r\n            details_url = f\"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}\"\r\n            details_response = requests.get(details_url, timeout=5)\r\n            details_data = details_response.json()\r\n            imdb_id = details_data.get('imdb_id')\r\n\r\n            poster_url = f\"https://image.tmdb.org/t/p/w500{poster_path}\" if poster_path else url_for('static', filename='default.jpg')\r\n            imdb_url = f\"https://www.imdb.com/title/{imdb_id}/\" if imdb_id else None\r\n\r\n            return poster_url, imdb_url\r\n        else:\r\n            return url_for('static', filename='default.jpg'), None\r\n\r\n    except Exception as e:\r\n        print(\"Error fetching poster or IMDb link:\", e)\r\n        return url_for('static', filename='default.jpg'), None\r\n\r\n\r\ndef recommend(movie_title):\r\n    idx = moviess[moviess['title'].str.lower() == movie_title.lower()].index\r\n    if len(idx) == 0:\r\n        print(\"Movie not found.\")\r\n        return []\r\n\r\n    idx = idx[0]\r\n    distances = cosine_similarity(vectors[idx], vectors)\r\n    movie_list = sorted(list(enumerate(distances[0])), key=lambda x: x[1], reverse=True)[1:6]\r\n\r\n    recommendations = []\r\n    for i in movie_list:\r\n        title = moviess.iloc[i[0]].title\r\n        poster, imdb = fetch_poster(title)\r\n        recommendations.append({\r\n            'title': title,\r\n            'poster': poster,\r\n            'imdb': imdb\r\n        })\r\n\r\n    return recommendations\r\n\r\n\r\ndef search_by_genre(genre):\r\n    return moviess[moviess['genre'].str.contains(genre, case=False)]['title'].tolist()\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/content_filter.py b/content_filter.py
+--- a/content_filter.py	(revision e1ca6e1b744f52a4f8d677d0314ff4130551733e)
++++ b/content_filter.py	(date 1748198426076)
+@@ -62,4 +62,8 @@
+ 
+ 
+ def search_by_genre(genre):
+-    return moviess[moviess['genre'].str.contains(genre, case=False)]['title'].tolist()
++    results = moviess[moviess['genres'].apply(lambda x: any(genre.lower() == g.lower() for g in x))]['title'].tolist()
++    return results[:5]
++
++
++
+Index: app.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from flask import Flask, render_template, request\r\nfrom content_filter import recommend, fetch_poster\r\nimport pickle\r\n\r\napp = Flask(__name__)\r\n\r\nmovies = pickle.load(open('models/movies.pkl', 'rb'))\r\n\r\n@app.route('/', methods=['GET', 'POST'])\r\ndef index():\r\n    recommended = []\r\n    if request.method == 'POST':\r\n        movie = request.form['movie']\r\n        poster_url = fetch_poster(movie)\r\n        recommended = recommend(movie)\r\n    return render_template('index.html', movies=movies['title'].head(100).values, recommended=recommended)\r\n\r\n\r\nif __name__ == '__main__':\r\n    app.run(debug=True)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app.py b/app.py
+--- a/app.py	(revision e1ca6e1b744f52a4f8d677d0314ff4130551733e)
++++ b/app.py	(date 1748198325645)
+@@ -1,5 +1,5 @@
+-from flask import Flask, render_template, request
+-from content_filter import recommend, fetch_poster
++from flask import Flask, render_template, request, redirect, url_for
++from content_filter import recommend, search_by_genre
+ import pickle
+ 
+ app = Flask(__name__)
+@@ -9,12 +9,30 @@
+ @app.route('/', methods=['GET', 'POST'])
+ def index():
+     recommended = []
++    genre_results = []
++
+     if request.method == 'POST':
+-        movie = request.form['movie']
+-        poster_url = fetch_poster(movie)
++        # Check which form submitted and redirect with query params
++        if 'movie' in request.form and request.form['movie'].strip():
++            movie = request.form['movie'].strip()
++            return redirect(url_for('index', movie=movie))
++        elif 'genre' in request.form and request.form['genre'].strip():
++            genre = request.form['genre'].strip()
++            return redirect(url_for('index', genre=genre))
++
++    # On GET request, get query params and process
++    movie = request.args.get('movie')
++    genre = request.args.get('genre')
++
++    if movie:
+         recommended = recommend(movie)
+-    return render_template('index.html', movies=movies['title'].head(100).values, recommended=recommended)
++    if genre:
++        genre_results = search_by_genre(genre)
++
++    return render_template('index.html', movies=movies['title'].head(100).values,
++                           recommended=recommended, genre_results=genre_results,
++                           current_movie=movie, current_genre=genre)
+ 
+ 
+ if __name__ == '__main__':
+-    app.run(debug=True)
+\ No newline at end of file
++    app.run(debug=True)
+Index: templates/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>\uD83C\uDFAC ILLUSTRIOUS FILMS </title>\r\n    <link rel=\"stylesheet\" href=\"{{ url_for('static', filename='style.css') }}\">\r\n    <link href=\"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap\" rel=\"stylesheet\">\r\n</head>\r\n\r\n<body>\r\n    <h1 class=\"logo-title\"> ILLUSTRIOUS FILMS </h1>\r\n    <h2 class=\"tagline\" style=\"color: white;\">Curated Cinema Picks for True Film Lovers</h2>\r\n    <form method=\"POST\">\r\n        <input type=\"text\" name=\"movie\" placeholder=\"Enter your favorite movie...\" required>\r\n        <input type=\"submit\" value=\"Recommend\">\r\n    </form>\r\n\r\n    {% if recommended %}\r\n        <h3>Top 5 Recommendations</h3>\r\n        <div class=\"recommendation-grid\">\r\n            {% for rec in recommended %}\r\n            <div class=\"movie-card\">\r\n                {% if rec.poster and rec.imdb %}\r\n                    <a href=\"{{ rec.imdb }}\" target=\"_blank\">\r\n                        <img src=\"{{ rec.poster }}\" alt=\"{{ rec.title }}\">\r\n                    </a>\r\n                {% else %}\r\n                    <img src=\"{{ rec.poster }}\" alt=\"{{ rec.title }}\">\r\n                {% endif %}\r\n                <p>{{ rec.title }}</p>\r\n            </div>\r\n            {% endfor %}\r\n        </div>\r\n    {% endif %}\r\n\r\n    <footer>\r\n        Built with ❤\uFE0F for film lovers |Follow us on\r\n        <div>\r\n        <a href=\"https://www.instagram.com/illustrious_films/\" target=\"_blank\">\r\n            <img src=\"https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png\" alt=\"Instagram\" style=\"width:32px;\">\r\n        </a>\r\n        </div>\r\n    </footer>\r\n</body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/index.html b/templates/index.html
+--- a/templates/index.html	(revision e1ca6e1b744f52a4f8d677d0314ff4130551733e)
++++ b/templates/index.html	(date 1748198374459)
+@@ -10,11 +10,21 @@
+ <body>
+     <h1 class="logo-title"> ILLUSTRIOUS FILMS </h1>
+     <h2 class="tagline" style="color: white;">Curated Cinema Picks for True Film Lovers</h2>
+-    <form method="POST">
+-        <input type="text" name="movie" placeholder="Enter your favorite movie..." required>
++    <!-- Form for movie recommendation -->
++    <form method="POST" action="/">
++        <input type="text" name="movie" placeholder="Enter a movie title" value="{{ current_movie or '' }}">
+         <input type="submit" value="Recommend">
+     </form>
+ 
++    <form method="POST" action="/">
++        <input type="text" name="genre" placeholder="Enter a Genre" value="{{ current_genre or '' }}">
++        <input type="submit" value="Search by GENRE">
++    </form>
++
++
++
++
++
+     {% if recommended %}
+         <h3>Top 5 Recommendations</h3>
+         <div class="recommendation-grid">
+@@ -33,6 +43,16 @@
+         </div>
+     {% endif %}
+ 
++    {% if genre_results %}
++        <h2>Movies in this genre:</h2>
++        <ul>
++        {% for movie in genre_results %}
++            <li>{{ movie }}</li>
++        {% endfor %}
++        </ul>
++    {% endif %}
++
++
+     <footer>
+         Built with ❤️ for film lovers |Follow us on
+         <div>
