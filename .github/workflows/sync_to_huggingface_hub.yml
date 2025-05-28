@@ -2,7 +2,7 @@ name: Sync to Hugging Face hub
 
 on:
   push:
-    branches: [main]
+    branches: [LEON]
   workflow_dispatch:
 
 jobs:
@@ -12,10 +12,15 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          lfs: true
+          lfs: false  # You don't need this now since LFS is removed
 
-      - name: Create data folder
-        run: mkdir -p movie-recommendation-system/data
+      - name: Create models folder
+        run: mkdir -p movie-recommendation-system/models
+
+      - name: Download TMDB_movie_dataset_v11.csv from Google Drive
+        run: |
+          FILE_ID="1vsxBOCqPR2DLtNFCnLXyNu1Vz6fFM87E"
+          wget --no-check-certificate "https://drive.google.com/uc?export=download&id=${FILE_ID}" -O movie-recommendation-system/data/TMDB_movie_dataset_v11.csv
 
       - name: Download movies.pkl from Google Drive
         run: |
@@ -23,13 +28,19 @@ jobs:
           FILE_NAME="movies.pkl"
           wget --no-check-certificate "https://drive.google.com/uc?export=download&id=${FILE_ID}" -O movie-recommendation-system/models/${FILE_NAME}
 
-      - name: Download vector.pkl from Google Drive
+      - name: Download vectors.pkl from Google Drive
         run: |
           FILE_ID="1YB8BSqYPS-Sce_9HpwugieHvXjHZwe5d"
           FILE_NAME="vectors.pkl"
           wget --no-check-certificate "https://drive.google.com/uc?export=download&id=${FILE_ID}" -O movie-recommendation-system/models/${FILE_NAME}
 
+      - name: Download vectorizer.pkl from Google Drive
+        run: |
+          FILE_ID="1YB8BSqYPS-Sce_9HpwugieHvXjHZwe5d"
+          FILE_NAME="vectorizer.pkl"
+          wget --no-check-certificate "https://drive.google.com/uc?export=download&id=${FILE_ID}" -O movie-recommendation-system/models/${FILE_NAME}
+
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://SFG006:$HF_TOKEN@huggingface.co/spaces/SFG006/Illustrious-films main
+        run: git push https://SFG006:$HF_TOKEN@huggingface.co/spaces/SFG006/Illustrious-films LEON
