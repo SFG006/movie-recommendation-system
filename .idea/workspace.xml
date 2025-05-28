@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2779707a-69c5-428b-8cb8-9994afb27dcc" name="Changes" comment="changes in app.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/vectors.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +199,7 @@
       <workItem from="1748327244252" duration="16000" />
       <workItem from="1748415793709" duration="298000" />
       <workItem from="1748416941132" duration="1357000" />
-      <workItem from="1748424284314" duration="619000" />
+      <workItem from="1748424284314" duration="2533000" />
     </task>
     <task id="LOCAL-00001" summary="Done with Collaborative Filtering">
       <option name="closed" value="true" />
@@ -363,7 +361,39 @@
       <option name="project" value="LOCAL" />
       <updated>1748418269287</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="changes in app.py">
+      <option name="closed" value="true" />
+      <created>1748425103288</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1748425103288</updated>
+    </task>
+    <task id="LOCAL-00022" summary="changes in app.py">
+      <option name="closed" value="true" />
+      <created>1748425112961</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1748425112961</updated>
+    </task>
+    <task id="LOCAL-00023" summary="changes in app.py">
+      <option name="closed" value="true" />
+      <created>1748425137841</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1748425137841</updated>
+    </task>
+    <task id="LOCAL-00024" summary="changes in app.py">
+      <option name="closed" value="true" />
+      <created>1748425302577</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1748425302577</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
