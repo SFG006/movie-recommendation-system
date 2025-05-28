@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2779707a-69c5-428b-8cb8-9994afb27dcc" name="Changes" comment="lets goo!!" />
+    <list default="true" id="2779707a-69c5-428b-8cb8-9994afb27dcc" name="Changes" comment="lets goo!!">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +20,7 @@
         <option value="HTML File" />
         <option value="Python Script" />
         <option value="Jupyter Notebook" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -192,7 +197,10 @@
       <workItem from="1748265032006" duration="3106000" />
       <workItem from="1748269159515" duration="175000" />
       <workItem from="1748269431184" duration="151000" />
-      <workItem from="1748269809554" duration="683000" />
+      <workItem from="1748269809554" duration="1176000" />
+      <workItem from="1748327244252" duration="16000" />
+      <workItem from="1748415793709" duration="298000" />
+      <workItem from="1748416941132" duration="683000" />
     </task>
     <task id="LOCAL-00001" summary="Done with Collaborative Filtering">
       <option name="closed" value="true" />
@@ -322,7 +330,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748269867212</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="lets goo!!">
+      <option name="closed" value="true" />
+      <created>1748271055251</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1748271055251</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
