@@ -31,13 +31,13 @@ jobs:
 
       - name: Download vectors.pkl from Google Drive
         run: |
-          FILE_ID="PUT_VECTOR_FILE_ID_HERE"  # Replace with actual ID
+          FILE_ID="1YB8BSqYPS-Sce_9HpwugieHvXjHZwe5d"  # Replace with actual ID
           FILE_NAME="vectors.pkl"
           wget --no-check-certificate "https://drive.google.com/uc?export=download&id=${FILE_ID}" -O movie-recommendation-system/models/${FILE_NAME}
 
       - name: Download vectorizer.pkl from Google Drive
         run: |
-          FILE_ID="PUT_VECTORIZER_FILE_ID_HERE"  # Replace with actual ID
+          FILE_ID="1FhaNY392iX-U5g8aUKR_73sE0Uq_QSbk"  # Replace with actual ID
           FILE_NAME="vectorizer.pkl"
           wget --no-check-certificate "https://drive.google.com/uc?export=download&id=${FILE_ID}" -O movie-recommendation-system/models/${FILE_NAME}
 
