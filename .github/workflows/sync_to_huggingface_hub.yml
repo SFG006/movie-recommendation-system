@@ -17,6 +17,10 @@ jobs:
       - name: Create models folder
         run: mkdir -p movie-recommendation-system/models
 
+      - name: Debug - List files before TMDB check
+        run: |
+          ls -lR
+      
       - name: Fail if TMDB file is present
         run: |
           if [ -f data/TMDB_movie_dataset_v11.csv ]; then
