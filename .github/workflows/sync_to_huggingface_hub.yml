@@ -1,9 +1,8 @@
 name: Sync to Hugging Face hub
+
 on:
   push:
     branches: [main]
-
-  # to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
@@ -14,6 +13,22 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
+
+      - name: Create data folder
+        run: mkdir -p movie-recommendation-system/data
+
+      - name: Download movies.pkl from Google Drive
+        run: |
+          FILE_ID="1VI5hdOLksCINWPMa2Fv1hvHJqwJTGbdl"
+          FILE_NAME="movies.pkl"
+          wget --no-check-certificate "https://drive.google.com/uc?export=download&id=${FILE_ID}" -O movie-recommendation-system/models/${FILE_NAME}
+
+      - name: Download vector.pkl from Google Drive
+        run: |
+          FILE_ID="1YB8BSqYPS-Sce_9HpwugieHvXjHZwe5d"
+          FILE_NAME="vectors.pkl"
+          wget --no-check-certificate "https://drive.google.com/uc?export=download&id=${FILE_ID}" -O movie-recommendation-system/models/${FILE_NAME}
+
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
