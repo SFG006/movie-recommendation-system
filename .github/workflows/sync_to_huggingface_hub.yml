@@ -17,11 +17,6 @@ jobs:
       - name: Create models folder
         run: mkdir -p movie-recommendation-system/models
 
-      - name: Download TMDB_movie_dataset_v11.csv from Google Drive
-        run: |
-          FILE_ID="1vsxBOCqPR2DLtNFCnLXyNu1Vz6fFM87E"
-          FILE_NAME="TMDB_movie_dataset_v11.csv"
-          wget --no-check-certificate "https://drive.google.com/uc?export=download&id=${FILE_ID}" -O movie-recommendation-system/models/${FILE_NAME}
 
       - name: Download movies.pkl from Google Drive
         run: |
