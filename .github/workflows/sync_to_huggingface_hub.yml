@@ -17,12 +17,7 @@ jobs:
       - name: Create models folder
         run: mkdir -p movie-recommendation-system/models
 
-      - name: Fail if TMDB file is present
-        run: |
-          if [ -f data/*.csv ]; then
-            echo "TMDB file detected! Aborting push."
-            exit 1
-          fi
+      
 
       - name: Prepare files for Hugging Face push (exclude TMDB)
         run: |
