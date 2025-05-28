@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2779707a-69c5-428b-8cb8-9994afb27dcc" name="Changes" comment="changes in app.py">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="2779707a-69c5-428b-8cb8-9994afb27dcc" name="Changes" comment="/" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -200,6 +198,7 @@
       <workItem from="1748415793709" duration="298000" />
       <workItem from="1748416941132" duration="1357000" />
       <workItem from="1748424284314" duration="2533000" />
+      <workItem from="1748428068903" duration="566000" />
     </task>
     <task id="LOCAL-00001" summary="Done with Collaborative Filtering">
       <option name="closed" value="true" />
@@ -393,7 +392,23 @@
       <option name="project" value="LOCAL" />
       <updated>1748425302577</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="/">
+      <option name="closed" value="true" />
+      <created>1748428362359</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1748428362359</updated>
+    </task>
+    <task id="LOCAL-00026" summary="/">
+      <option name="closed" value="true" />
+      <created>1748428400878</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1748428400878</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -420,13 +435,13 @@
     <MESSAGE value="recover the code finally" />
     <MESSAGE value="delete movie-recommendation-system.git" />
     <MESSAGE value="creating front using flask" />
-    <MESSAGE value="/" />
     <MESSAGE value="fix poster not found deafult poster, add links to imdb page" />
     <MESSAGE value="makes ui look more cineamtic" />
     <MESSAGE value="lets goo!!" />
     <MESSAGE value="Cleaned up requirements for deployment" />
     <MESSAGE value="changes in app.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes in app.py" />
+    <MESSAGE value="/" />
+    <option name="LAST_COMMIT_MESSAGE" value="/" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/fixmain_ipynb$fix_file.coverage" NAME="fix_file Coverage Results" MODIFIED="1747887851637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
