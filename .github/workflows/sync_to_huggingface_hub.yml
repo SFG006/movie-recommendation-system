@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          lfs: false  # You don't need this now since LFS is removed
+          lfs: false
 
       - name: Create models folder
         run: mkdir -p movie-recommendation-system/models
@@ -20,7 +20,8 @@ jobs:
       - name: Download TMDB_movie_dataset_v11.csv from Google Drive
         run: |
           FILE_ID="1vsxBOCqPR2DLtNFCnLXyNu1Vz6fFM87E"
-          wget --no-check-certificate "https://drive.google.com/uc?export=download&id=${FILE_ID}" -O movie-recommendation-system/data/TMDB_movie_dataset_v11.csv
+          FILE_NAME="TMDB_movie_dataset_v11.csv"
+          wget --no-check-certificate "https://drive.google.com/uc?export=download&id=${FILE_ID}" -O movie-recommendation-system/models/${FILE_NAME}
 
       - name: Download movies.pkl from Google Drive
         run: |
@@ -30,13 +31,13 @@ jobs:
 
       - name: Download vectors.pkl from Google Drive
         run: |
-          FILE_ID="1YB8BSqYPS-Sce_9HpwugieHvXjHZwe5d"
+          FILE_ID="1YB8BSqYPS-Sce_9HpwugieHvXjHZwe5d"  # Replace with actual ID
           FILE_NAME="vectors.pkl"
           wget --no-check-certificate "https://drive.google.com/uc?export=download&id=${FILE_ID}" -O movie-recommendation-system/models/${FILE_NAME}
 
       - name: Download vectorizer.pkl from Google Drive
         run: |
-          FILE_ID="1YB8BSqYPS-Sce_9HpwugieHvXjHZwe5d"
+          FILE_ID="1FhaNY392iX-U5g8aUKR_73sE0Uq_QSbk"  # Replace with actual ID
           FILE_NAME="vectorizer.pkl"
           wget --no-check-certificate "https://drive.google.com/uc?export=download&id=${FILE_ID}" -O movie-recommendation-system/models/${FILE_NAME}
 
