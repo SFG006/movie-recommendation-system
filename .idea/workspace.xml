@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2779707a-69c5-428b-8cb8-9994afb27dcc" name="Changes" comment="Cleaned up requirements for deployment" />
+    <list default="true" id="2779707a-69c5-428b-8cb8-9994afb27dcc" name="Changes" comment="changes in app.py">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/vectors.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -196,7 +200,8 @@
       <workItem from="1748269809554" duration="1176000" />
       <workItem from="1748327244252" duration="16000" />
       <workItem from="1748415793709" duration="298000" />
-      <workItem from="1748416941132" duration="1256000" />
+      <workItem from="1748416941132" duration="1357000" />
+      <workItem from="1748424284314" duration="619000" />
     </task>
     <task id="LOCAL-00001" summary="Done with Collaborative Filtering">
       <option name="closed" value="true" />
@@ -350,7 +355,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748417664527</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="changes in app.py">
+      <option name="closed" value="true" />
+      <created>1748418269287</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1748418269287</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +395,8 @@
     <MESSAGE value="makes ui look more cineamtic" />
     <MESSAGE value="lets goo!!" />
     <MESSAGE value="Cleaned up requirements for deployment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up requirements for deployment" />
+    <MESSAGE value="changes in app.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes in app.py" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/fixmain_ipynb$fix_file.coverage" NAME="fix_file Coverage Results" MODIFIED="1747887851637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
