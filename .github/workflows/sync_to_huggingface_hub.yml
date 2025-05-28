@@ -33,18 +33,6 @@ jobs:
             rsync -av --exclude='data/TMDB_movie_dataset_v11.csv' . output_dir/
 
 
-      - name: Download movies.pkl from Google Drive
-        run: |
-          FILE_ID="1VI5hdOLksCINWPMa2Fv1hvHJqwJTGbdl"
-          FILE_NAME="movies.pkl"
-          wget --no-check-certificate "https://drive.google.com/uc?export=download&id=${FILE_ID}" -O movie-recommendation-system/models/${FILE_NAME}
-
-      
-      - name: Download vectorizer.pkl from Google Drive
-        run: |
-          FILE_ID="1FhaNY392iX-U5g8aUKR_73sE0Uq_QSbk"  # Replace with actual ID
-          FILE_NAME="vectorizer.pkl"
-          wget --no-check-certificate "https://drive.google.com/uc?export=download&id=${FILE_ID}" -O movie-recommendation-system/models/${FILE_NAME}
 
       - name: Push to hub
         env:
