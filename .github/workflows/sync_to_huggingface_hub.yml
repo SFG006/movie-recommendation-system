@@ -17,6 +17,17 @@ jobs:
       - name: Create models folder
         run: mkdir -p movie-recommendation-system/models
 
+      - name: Fail if TMDB file is present
+        run: |
+          if [ -f data/TMDB_movie_dataset_v11.csv ]; then
+            echo "TMDB file detected! Aborting push."
+            exit 1
+          fi
+
+      - name: Prepare files for Hugging Face push (exclude TMDB)
+        run: |
+            rsync -av --exclude='data/TMDB_movie_dataset_v11.csv' . output_dir/
+
 
       - name: Download movies.pkl from Google Drive
         run: |
