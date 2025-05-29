@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 1
-          lfs: false
+          fetch-depth: 0
+          lfs: true
 
       - name: Create models folder
         run: mkdir -p movie-recommendation-system/models
@@ -37,4 +37,5 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://SFG006:$HF_TOKEN@huggingface.co/spaces/SFG006/Illustrious-films LEON
+        run: git remote add hub https://SFG006:$HF_TOKEN@huggingface.co/spaces/SFG006/Illustrious-films LEON
+             git push hub LEON --force
