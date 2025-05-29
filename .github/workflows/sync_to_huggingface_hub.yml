@@ -37,5 +37,6 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git remote add hub https://SFG006:$HF_TOKEN@huggingface.co/spaces/SFG006/Illustrious-films LEON
-             git push hub LEON --force
+        run: |
+            git remote add hub https://SFG006:$HF_TOKEN@huggingface.co/spaces/SFG006/Illustrious-films LEON
+            git push hub LEON --force
