@@ -1,0 +1,133 @@
+---
+
+# 🎬 Movie Recommendation System
+
+This is a **Flask-based Movie Recommendation Web App** that suggests similar movies based on a selected title using **content-based filtering**. It fetches movie posters and IMDb links using the **TMDb API**.
+
+---
+
+## 🚀 Features
+
+* 🎥 Recommend similar movies using vector-based cosine similarity
+* 🖼️ Fetch high-quality posters using the TMDb API
+* 🔗 Direct IMDb links for recommended movies
+* 💡 Sleek and responsive user interface
+* 🧠 Built using Scikit-learn, Flask, and precomputed embeddings
+
+---
+
+## 📂 Project Structure
+
+```plaintext
+├── app.py                  # Main Flask app
+├── content_filter.py       # Recommendation logic and poster fetch function
+├── static/
+│   └── style.css           # Custom CSS styles
+├── templates/
+│   └── index.html          # HTML template (not included here)
+├── models/
+│   ├── movies.pkl          # Movie data with title and metadata
+│   └── vectors.pkl         # Precomputed TF-IDF vectors
+└── README.md               # Project documentation
+```
+
+---
+
+## 🛠️ How It Works
+
+### 1. Content-Based Filtering
+
+* Uses **TF-IDF vectorization** of movie descriptions.
+* Computes **cosine similarity** between movies.
+* Returns top 5 similar movies.
+
+### 2. Poster Fetching
+
+* Integrates with **TMDb API** to fetch:
+
+  * Movie Poster
+  * IMDb URL
+
+---
+
+## 🔧 Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/movie-recommender-flask.git
+cd movie-recommender-flask
+```
+
+### 2. Install Dependencies
+
+Make sure you have Python 3.7+ and `pip` installed.
+
+```bash
+pip install -r requirements.txt
+```
+
+```bash
+pip install flask scikit-learn requests
+```
+
+### 3. Set Environment Variable
+
+Get your **TMDb API Key** from [TMDb](https://www.themoviedb.org/) and set it:
+
+**On Linux/macOS:**
+
+```bash
+export TMDB_API_KEY="your_api_key"
+```
+
+**On Windows (Command Prompt):**
+
+```cmd
+set TMDB_API_KEY=your_api_key
+```
+
+### 4. Run the App
+
+```bash
+python app.py
+```
+
+The app will run on `http://0.0.0.0:7860`.
+
+---
+
+## 📸 Screenshots
+
+*(Add a screenshot of your app UI here if you want)*
+
+---
+
+## 📚 Technologies Used
+
+* Python 🐍
+* Flask 🌐
+* Scikit-learn 🤖
+* TMDb API 🎞️
+* HTML5 + CSS3 🎨
+
+---
+
+## 📌 Future Enhancements
+
+* Add genre/category filters
+* Use collaborative filtering with user ratings
+* Deploy on Heroku or Render
+
+---
+
+## 💬 Acknowledgements
+
+* [TMDb](https://www.themoviedb.org/) for their free API
+* Scikit-learn for vector similarity functions
+
+---
+
+## 🧑‍💻 Author
+
+Made with ❤️ by \[SFG006]
