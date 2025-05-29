@@ -104,6 +104,28 @@ The app will run on `http://0.0.0.0:7860`.
 
 ---
 
+---
+
+## 🐳 Docker Deployment
+
+To run the application using Docker:
+
+1. **Build the Docker Image**:
+
+   ```bash
+   docker build -t movie-recommendation .
+   ```
+
+2. **Run the Docker Container**:
+
+   ```bash
+   docker run -p 7860:7860 --env TMDB_API_KEY=your_api_key_here movie-recommendation
+   ```
+
+   * The application will be accessible at `http://localhost:7860/`.
+
+---
+
 ## 📸 Screenshots
 
 *(Add a screenshot of your app UI here if you want)*
