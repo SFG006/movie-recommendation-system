@@ -1,11 +1,13 @@
 import pickle
+import os
 import random
 import requests
 import urllib.parse
 from sklearn.metrics.pairwise import cosine_similarity
 from flask import url_for
 
-API_KEY = '1785d39c9dc62729cb9c119ae7957953'
+API_KEY = os.getenv("TMDB_API_KEY")
+
 
 # Load the movie data and precomputed vectors from pickle files
 moviess = pickle.load(open('models/movies.pkl', 'rb'))
