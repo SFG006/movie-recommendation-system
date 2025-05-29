@@ -55,8 +55,8 @@ This is a **Flask-based Movie Recommendation Web App** that suggests similar mov
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/movie-recommender-flask.git
-cd movie-recommender-flask
+https://github.com/SFG006/movie-recommendation-system.git
+cd movie-recommendation-system
 ```
 
 ### 2. Install Dependencies
