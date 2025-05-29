@@ -19,16 +19,23 @@ This is a **Flask-based Movie Recommendation Web App** that suggests similar mov
 ## 📂 Project Structure
 
 ```plaintext
-├── app.py                  # Main Flask app
-├── content_filter.py       # Recommendation logic and poster fetch function
-├── static/
-│   └── style.css           # Custom CSS styles
-├── templates/
-│   └── index.html          # HTML template (not included here)
+movie-recommendation-system/
+├── app.py
+├── content_filter.py
+├── Dockerfile
+├── requirements.txt
 ├── models/
-│   ├── movies.pkl          # Movie data with title and metadata
-│   └── vectors.pkl         # Precomputed TF-IDF vectors
-└── README.md               # Project documentation
+│   ├── movies.pkl
+│   └── vectors.pkl
+├── data/
+│   └── movies.csv
+├── notebooks/
+│   └── development_notebook.ipynb
+├── static/
+│   └── style.css
+├── templates/
+│   └── index.html
+└── README.md
 ```
 
 ---
