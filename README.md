@@ -150,6 +150,12 @@ To run the application using Docker:
 
 ---
 
+## 📄 License
+
+This project is licensed under the [Apache 2.0 License](LICENSE).
+
+---
+
 ## 💬 Acknowledgements
 
 * [TMDb](https://www.themoviedb.org/) for their free API
@@ -159,4 +165,4 @@ To run the application using Docker:
 
 ## 🧑‍💻 Author
 
-Made with ❤️ by \[SFG006]
+Made with ❤️ by \SFG006
