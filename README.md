@@ -1,5 +1,3 @@
----
-
 # 🎬 Movie Recommendation System
 
 This is a **Flask-based Movie Recommendation Web App** that suggests similar movies based on a selected title using **content-based filtering**. It fetches movie posters and IMDb links using the **TMDb API**.
@@ -146,14 +144,6 @@ To run the application using Docker:
 * Scikit-learn 🤖
 * TMDb API 🎞️
 * HTML5 + CSS3 🎨
-
----
-
-## 📌 Future Enhancements
-
-* Add genre/category filters
-* Use collaborative filtering with user ratings
-* Deploy on Heroku or Render
 
 ---
 
