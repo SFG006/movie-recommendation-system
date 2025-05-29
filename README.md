@@ -133,7 +133,8 @@ To run the application using Docker:
 
 ## 📸 Screenshots
 
-*(Add a screenshot of your app UI here if you want)*
+*![Untitled design](https://github.com/user-attachments/assets/dd401396-ea47-47a3-93d8-015b876ca485)
+*
 
 ---
 
