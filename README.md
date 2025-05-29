@@ -11,6 +11,12 @@ Try the app online on Hugging Face Spaces:
 
 ---
 
+## 📸 Screenshots
+
+![Untitled design](https://github.com/user-attachments/assets/dd401396-ea47-47a3-93d8-015b876ca485)
+
+---
+
 ## 🚀 Features
 
 * 🎥 Recommend similar movies using vector-based cosine similarity
@@ -109,8 +115,6 @@ The app will run on `http://0.0.0.0:7860`.
 
 ---
 
----
-
 ## 🐳 Docker Deployment
 
 To run the application using Docker:
@@ -128,13 +132,6 @@ To run the application using Docker:
    ```
 
    * The application will be accessible at `http://localhost:7860/`.
-
----
-
-## 📸 Screenshots
-
-*![Untitled design](https://github.com/user-attachments/assets/dd401396-ea47-47a3-93d8-015b876ca485)
-*
 
 ---
 
