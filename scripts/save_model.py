@@ -25,6 +25,6 @@ cv = CountVectorizer(max_features=5000, stop_words='english')
 vectors = cv.fit_transform(moviess['tags'])
 
 # Save models
-pickle.dump(moviess, open('../models/movies.pkl', 'wb'))
+# pickle.dump(moviess, open('../models/movies.pkl', 'wb'))
 pickle.dump(cv, open('../models/vectorizer.pkl', 'wb'))
-pickle.dump(vectors, open('../models/vectors.pkl', 'wb'))
+# pickle.dump(vectors, open('../models/vectors.pkl', 'wb'))

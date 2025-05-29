@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2779707a-69c5-428b-8cb8-9994afb27dcc" name="Changes" comment="/">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -207,6 +208,7 @@
       <workItem from="1748440452407" duration="292000" />
       <workItem from="1748443570534" duration="127000" />
       <workItem from="1748488750763" duration="226000" />
+      <workItem from="1748490340233" duration="967000" />
     </task>
     <task id="LOCAL-00001" summary="Done with Collaborative Filtering">
       <option name="closed" value="true" />
@@ -448,7 +450,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748439297273</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="/">
+      <option name="closed" value="true" />
+      <created>1748490372195</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1748490372195</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
