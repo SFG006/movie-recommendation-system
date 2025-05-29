@@ -162,4 +162,4 @@ This project is licensed under the [Apache 2.0 License](LICENSE).
 
 ## 🧑‍💻 Author
 
-Made with ❤️ by \SFG006
+Made with ❤️ by SFG006
