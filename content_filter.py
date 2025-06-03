@@ -20,7 +20,7 @@ def fetch_poster(title):
     """
     try:
         # Encode the movie title to make it URL-safe
-        encoded_title = urllib.parse.quote(title)
+        encoded_title = urllib.parse.quote(title.strip())
         # Search for the movie using TMDB API
         search_url = f"https://api.themoviedb.org/3/search/movie?api_key={API_KEY}&query={encoded_title}"
         search_response = requests.get(search_url, timeout=5)
