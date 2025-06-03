@@ -58,6 +58,7 @@ def recommend(movie_title):
     Returns a list of dictionaries containing title, poster URL, and IMDb URL for each recommended movie.
     """
     # Find the index of the movie with the given title (case-insensitive)
+    movie_title = movie_title.strip()
     idx = moviess[moviess['title'].str.lower() == movie_title.lower()].index
     if len(idx) == 0:
         # Movie not found in the dataset
