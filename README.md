@@ -6,7 +6,7 @@ This is a **Flask-based Movie Recommendation Web App** that suggests similar mov
 
 ---
 
-### 🚀 Live Demo
+## 🚀 Live Demo
 
 Try the app online on [Hugging Face Spaces](https://huggingface.co/spaces/SFG006/Illustrious-Films)🤗
 
