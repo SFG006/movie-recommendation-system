@@ -2,18 +2,13 @@
 
 This is a **Flask-based Movie Recommendation Web App** that suggests similar movies based on a selected title using **content-based filtering**. It fetches movie posters and IMDb links using the **TMDb API**.
 
+![Untitled design](https://github.com/user-attachments/assets/dd401396-ea47-47a3-93d8-015b876ca485)
+
 ---
 
 ### 🚀 Live Demo
 
-Try the app online on Hugging Face Spaces:
-[Illustrious Films on Hugging Face](https://huggingface.co/spaces/SFG006/Illustrious-Films)
-
----
-
-## 📸 Screenshots
-
-![Untitled design](https://github.com/user-attachments/assets/dd401396-ea47-47a3-93d8-015b876ca485)
+Try the app online on [Hugging Face Spaces🤗](https://huggingface.co/spaces/SFG006/Illustrious-Films)
 
 ---
 
