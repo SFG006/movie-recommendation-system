@@ -6,13 +6,13 @@ This is a **Flask-based Movie Recommendation Web App** that suggests similar mov
 
 ---
 
-## 🚀 Live Demo
+##   Live
 
-Try the app online on [Hugging Face Spaces](https://huggingface.co/spaces/SFG006/Illustrious-Films)🤗
+Try the app online on [Hugging Face Spaces](https://sfg006-illustrious-films.hf.space)🤗
 
 ---
 
-## 🚀 Features
+##   Features
 
 * 🎥 Recommend similar movies using vector-based cosine similarity
 * 🖼️ Fetch high-quality posters using the TMDb API
