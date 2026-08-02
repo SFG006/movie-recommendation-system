@@ -14,15 +14,15 @@ Try the app online on [Hugging Face Spaces](https://sfg006-illustrious-films.hf.
 
 ##   Features
 
-* 🎥 Recommend similar movies using vector-based cosine similarity
-* 🖼️ Fetch high-quality posters using the TMDb API
-* 🔗 Direct IMDb links for recommended movies
-* 💡 Sleek and responsive user interface
-* 🧠 Built using Scikit-learn, Flask, and precomputed embeddings
+*  Recommend similar movies using vector-based cosine similarity
+*  Fetch high-quality posters using the TMDb API
+*  Direct IMDb links for recommended movies
+*  Sleek and responsive user interface
+*  Built using Scikit-learn, Flask, and precomputed embeddings
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```plaintext
 movie-recommendation-system/
@@ -46,7 +46,7 @@ movie-recommendation-system/
 
 ---
 
-## 🛠️ How It Works
+##  How It Works
 
 ### 1. Content-Based Filtering
 
@@ -63,7 +63,7 @@ movie-recommendation-system/
 
 ---
 
-## 🔧 Setup Instructions
+##  Setup Instructions
 
 ### 1. Clone the Repository
 
@@ -110,7 +110,7 @@ The app will run on `http://0.0.0.0:7860`.
 
 ---
 
-## 🐳 Docker Deployment
+##  Docker Deployment
 
 To run the application using Docker:
 
@@ -130,29 +130,29 @@ To run the application using Docker:
 
 ---
 
-## 📚 Technologies Used
+##  Technologies Used
 
-* Python 🐍
-* Flask 🌐
-* Scikit-learn 🤖
-* TMDb API 🎞️
-* HTML5 + CSS3 🎨
+* Python 
+* Flask 
+* Scikit-learn 
+* TMDb API 
+* HTML5 + CSS3 
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the [Apache 2.0 License](LICENSE).
 
 ---
 
-## 💬 Acknowledgements
+##  Acknowledgements
 
 * [TMDb](https://www.themoviedb.org/) for their free API
 * Scikit-learn for vector similarity functions
 
 ---
 
-## 🧑‍💻 Author
+##  Author
 
 Made with ❤️ by SFG006
